@@ -1,0 +1,53 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+secrets/
+.netrc
+
+# Python environments, caches and packaging
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Local vector databases and model artifacts
+cache/
+.cache/
+chromadb/
+chroma/
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+hf_cache/
+models/
+*.safetensors
+*.onnx
+*.pt
+*.pth
+*.wav
+
+# Local logs, temporary files and editor metadata
+*.log
+*.tmp
+*.swp
+*~
+.DS_Store
+.idea/
+.vscode/

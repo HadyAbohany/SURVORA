@@ -1,0 +1,40 @@
+# SURVORA NASA and Canadian Space Agency data inventory
+
+Reviewed 2026-11-14. The expansion adds 9 curated documents and 11 chunks through the existing Markdown adapter. The expanded corpus has 20 agency documents and 73 agency-science chunks, plus 261 game-design chunks, for 334 total. The API retains its legacy `nasa` layer for agency science and supplies `source_name` to distinguish NASA, NASA/JPL and the Canadian Space Agency. Source metadata is also recorded in `data/nasa/source_registry.json`. Official pages remain the source of record for technical detail.
+
+## Indexed references
+
+| Official source | Type and integration | New docs / chunks | Mission IDs or mission families | Scientific limits |
+| --- | --- | ---: | --- | --- |
+| [25 Years of Space Station Technology Driving Exploration](https://www.nasa.gov/centers-and-facilities/johnson/25-years-of-space-station-technology-driving-exploration/) | NASA article, curated power and life-support reference | 1 / 1 | M01, M02, M03, M04, M05, M09 | ISS system design does not establish game power allocation. |
+| [NASA Achieves Water Recovery Milestone on International Space Station](https://www.nasa.gov/missions/station/iss-research/nasa-achieves-water-recovery-milestone-on-international-space-station/) | NASA article, curated water-recovery reference | 1 / 1 | M02, M05, M09 | The milestone was a station demonstration. |
+| [CCMC DONKI System](https://ccmc.gsfc.nasa.gov/tools/DONKI/) | Static catalog explanation and separate dynamic API adapter | 1 / 1 | M07, E04 | Event timestamps and solar observations do not establish arrival at Mars or local dose. |
+| [RadLab Data API](https://visualization.osdr.nasa.gov/radlab/gui/data-api/) | Static measurement interpretation and separate structured API adapter | 1 / 1 | M07, E04 | ISS DosTel absorbed dose rate is an orbital measurement in μGy/hour. It supplies neither a Mars surface value nor a health threshold. |
+| [How do we protect the astronauts from space radiation?](https://srag.jsc.nasa.gov/SpaceRadiation/How/How.cfm) | NASA Space Radiation Analysis Group reference, English and Arabic excerpts | 1 / 2 | M07, E04 | Shielding depends on radiation, environment and materials. |
+| [Rodent Research-1 (RR1) NASA Validation Flight: Mouse soleus muscle transcriptomic and epigenomic data](https://osdr.nasa.gov/bio/repo/data/studies/OSD-104) | OSD-104 v9, curated study metadata, initial release 2017-02-28 | 1 / 1 | M10, ASTRONAUT_HEALTH | Mouse orbital study. Raw assay files were not copied and the study does not give a human Mars estimate. |
+| [Map a Mars Rover Driving Route](https://www.jpl.nasa.gov/edu/resources/project/map-a-mars-rover-driving-route/) | NASA/JPL Mars Trek lesson, curated terrain and route-planning explanation | 1 / 1 | E01, E02, E03, E05, R02 | Orbiter maps have finite resolution and may miss rover-scale obstacles. |
+| [Interplanetary Farming](https://www.asc-csa.gc.ca/eng/youth-educators/activities/fitness-and-nutrition/interplanetary-farming.asp) | CSA [food production toolkit](https://www.asc-csa.gc.ca/eng/youth-educators/toolkits/food-production/) activity, English and Arabic excerpts | 1 / 2 | M06, M10 | ISS plant experiments do not demonstrate a self-sufficient Mars greenhouse. |
+| [Physical activity in space](https://www.asc-csa.gc.ca/eng/astronauts/living-in-space/physical-activity-in-space.asp) | CSA educational reference selected via the [STEM resources directory](https://www.asc-csa.gc.ca/eng/youth-educators/resources-stem-and-youth-organizations.asp) and health material | 1 / 1 | M10, ASTRONAUT_HEALTH | Orbital microgravity cannot be treated as Mars partial gravity. |
+
+The complete mission IDs are stored in document frontmatter. M02 is confirmed by the existing integration examples. The other IDs use the documented mission prefixes and titles, pending mapping against the real Unity mission identifiers. `ASTRONAUT_HEALTH` is a topic identifier for clients to use explicitly. Unscoped legacy references are still available across missions.
+
+## Structured observations and source discovery
+
+- [NASA Open APIs](https://api.nasa.gov/) was inspected as a discovery and key registration portal. It contributes no indexed content. Any later API using the NASA key gateway needs that API's credential setup. The selected direct CCMC, RadLab and OSDR requests worked without credentials.
+- [DONKI API Reference](https://ccmc.gsfc.nasa.gov/DONKI/api/) and the [CCMC API migration announcement](https://ccmc.gsfc.nasa.gov/news/major-updates/) identify the current public Data API. `DonkiSource.fetch` accepts FLR, CME and SEP plus an explicit bounded date window. It normalizes observation and retrieval timestamps and provenance and keeps the highest version when duplicate event IDs occur in a response.
+- [RadLab Data API](https://visualization.osdr.nasa.gov/radlab/gui/data-api/) documents the JSON table schema and absorbed-dose-rate unit. `RadLabSource.fetch` accepts an explicit timezone-aware interval and requests only ISS DosTel absorbed dose rate. The adapter interprets unzoned API timestamps on the UTC axis, preserves spacecraft and instrument, and skips null measurements without substituting a value.
+- [OSDR search](https://osdr.nasa.gov/osdr/data/search?term=microgravity) returned HTTP 200 and 384 matching records for microgravity. That result was used to assess discoverability, with only the selected OSD-104 metadata summary added to the index. Other studies and raw files require individual scientific review and download if needed.
+- [Mars Trek](https://trek.nasa.gov/mars/) exposes map layers such as the MGS MOLA and Mars Express HRSC color hillshade blend, Viking VIS Global Color Mosaic, and MGS TES Global Dust. These are geospatial assets. An engine or GIS integration needs separate layer selection, projection, attribution and acquisition. No rasters, tiles or meshes were downloaded.
+- The CSA hub is a discovery resource. NOVA indexes the selected farming and activity explanations. The broader site and linked lesson files remain external.
+
+The observation adapters run only when called by trusted application code. They do not feed live values to Chat, update an index, poll in the background or trigger game events. The caller owns freshness policy and how historical observations are labeled in the UI. Fixture files under `tests/fixtures` are small excerpts of archived public responses.
+
+## Verification
+
+- **Regression:** 60 tests passed, zero failed or skipped. The existing Starlette TestClient deprecation warning remains. Added checks cover deduplication, ten mission-filtered English/Arabic retrieval queries, archived adapter fixtures, missing RadLab values, CSA citations through Chat and an existing food event.
+- **Targeted retrieval:** all ten expected sources appeared in the top three with BM25. Each tagged source was absent under an unrelated mission ID. On three natural-language hybrid probes, the expected water, farming and shielding reference ranked first.
+- **Persistence:** an isolated Chroma store embedded 334 documents in six batches. A separate backend process reopened the same collection with zero document re-embedding and identical top-three chunk IDs on the three probes. The original project's cache and BM25 default were preserved.
+- **Live provider:** three synthetic Chat API calls used real Gemini and hybrid retrieval. The water answer cited the NASA milestone (1.12 s), Arabic hydroponics cited CSA (1.85 s), and Arabic shielding cited NASA SRAG (1.27 s). Manual review confirmed the scientific claims matched the cited excerpts. This is a targeted verification, not a broad evaluation.
+- **Live observations:** the adapters retrieved 15 FLR, 6 CME, and 6 SEP records for the selected May 2024 windows and 18 ISS DosTel rows for a ten-minute April 2022 interval. No raw observation was added to the text index.
+
+To inspect the expanded BM25 corpus, restart NOVA and check `GET /health`. To build the optional vector index, install `requirements-semantic.txt` and start with `NOVA_ENABLE_SEMANTIC=true`. The corpus fingerprint selects a new collection and preserves previous collections.

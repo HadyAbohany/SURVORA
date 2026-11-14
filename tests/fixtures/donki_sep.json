@@ -1,0 +1,26 @@
+[
+  {
+    "sepID": "2024-05-10T12:59:00-SEP-001",
+    "eventTime": "2024-05-10T12:59Z",
+    "instruments": [
+      {
+        "displayName": "SOHO: COSTEP 15.8-39.8 MeV"
+      }
+    ],
+    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/30675/-1",
+    "linkedEvents": [
+      {
+        "activityID": "2024-05-09T08:45:00-FLR-001"
+      },
+      {
+        "activityID": "2024-05-09T17:23:00-FLR-001"
+      },
+      {
+        "activityID": "2024-05-10T06:27:00-FLR-001"
+      }
+    ],
+    "sentNotifications": null,
+    "submissionTime": "2024-05-10T13:39Z",
+    "versionId": 1
+  }
+]

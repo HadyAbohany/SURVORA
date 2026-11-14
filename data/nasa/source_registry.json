@@ -1,0 +1,345 @@
+[
+  {
+    "id": "MARS_FACTS",
+    "title": "Mars basic facts",
+    "url": "https://science.nasa.gov/mars/facts/",
+    "source_type": "document",
+    "topic": "mars",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "ECLSS",
+    "title": "NASA ECLSS",
+    "url": "https://www.nasa.gov/reference/environmental-control-and-life-support-systems-eclss/",
+    "source_type": "document",
+    "topic": "life_support",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "MOXIE",
+    "title": "MOXIE mission results",
+    "url": "https://www.nasa.gov/missions/mars-2020-perseverance/perseverance-rover/nasas-oxygen-generating-experiment-moxie-completes-mars-mission/",
+    "source_type": "document",
+    "topic": "oxygen",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "SOLAR_DUST",
+    "title": "Mars power and dust",
+    "url": "https://science.nasa.gov/wp-content/uploads/2024/02/mars-power-heating.pdf",
+    "source_type": "reference_pdf",
+    "topic": "power",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "separate_structured_or_reference",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "VEGGIE",
+    "title": "Growing plants in space",
+    "url": "https://www.nasa.gov/exploration-research-and-technology/growing-plants-in-space/",
+    "source_type": "document",
+    "topic": "agriculture",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "CSA_FOOD",
+    "title": "CSA space-food toolkit",
+    "url": "https://www.asc-csa.gc.ca/eng/youth-educators/toolkits/food-production/",
+    "source_type": "document",
+    "topic": "food",
+    "provider": "CSA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "CSA_FARM",
+    "title": "CSA Interplanetary Farming PDF",
+    "url": "https://www.asc-csa.gc.ca/pdf/eng/youth-educators/activities/fitness-and-nutrition/interplanetary-farming.pdf",
+    "source_type": "reference_pdf",
+    "topic": "food",
+    "provider": "CSA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "separate_structured_or_reference",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "PERSEVERANCE_TOOLS",
+    "title": "Perseverance science instruments",
+    "url": "https://science.nasa.gov/mission/mars-2020-perseverance/science-instruments/",
+    "source_type": "document",
+    "topic": "rover",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "PERSEVERANCE_SAMPLES",
+    "title": "Mars rock sample catalog",
+    "url": "https://science.nasa.gov/mission/mars-2020-perseverance/mars-rock-samples/",
+    "source_type": "structured_source",
+    "topic": "samples",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "separate_structured_or_reference",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "DONKI",
+    "title": "DONKI system and usage",
+    "url": "https://ccmc.gsfc.nasa.gov/tools/DONKI/",
+    "source_type": "api",
+    "topic": "space_weather",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "separate_structured_or_reference",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "DONKI_API",
+    "title": "DONKI API documentation",
+    "url": "https://ccmc.gsfc.nasa.gov/tools/API/",
+    "source_type": "api",
+    "topic": "space_weather",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "separate_structured_or_reference",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "DONKI_FIELDS",
+    "title": "DONKI event type reference",
+    "url": "https://ccmc.gsfc.nasa.gov/DONKI/guide/data-reference/",
+    "source_type": "api_docs",
+    "topic": "space_weather",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "separate_structured_or_reference",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "RADLAB",
+    "title": "RadLab API documentation",
+    "url": "https://visualization.osdr.nasa.gov/radlab/gui/data-api/",
+    "source_type": "api",
+    "topic": "radiation",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "separate_structured_or_reference",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "OSDR",
+    "title": "NASA OSDR biology",
+    "url": "https://osdr.nasa.gov/bio/repo/",
+    "source_type": "search_api",
+    "topic": "biology",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "separate_structured_or_reference",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "OSDR_SEARCH",
+    "title": "OSDR keyword search",
+    "url": "https://osdr.nasa.gov/osdr/data/search?term=plant",
+    "source_type": "api_example",
+    "topic": "biology",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "separate_structured_or_reference",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "MARS_TREK",
+    "title": "NASA Mars Trek",
+    "url": "https://trek.nasa.gov/mars/",
+    "source_type": "geospatial",
+    "topic": "terrain",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "separate_structured_or_reference",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "NASA_API",
+    "title": "NASA API portal",
+    "url": "https://api.nasa.gov/",
+    "source_type": "api_portal",
+    "topic": "api",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "separate_structured_or_reference",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "NASA_SPACE_WEATHER",
+    "title": "NASA space weather educational overview",
+    "url": "https://science.nasa.gov/heliophysics/space-weather/",
+    "source_type": "document",
+    "topic": "space_weather",
+    "provider": "NASA",
+    "retrieved_date": "2026-11-13",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "NASA_ISS_SYSTEMS",
+    "title": "25 Years of Space Station Technology Driving Exploration",
+    "url": "https://www.nasa.gov/centers-and-facilities/johnson/25-years-of-space-station-technology-driving-exploration/",
+    "provider": "NASA",
+    "source_type": "document",
+    "mission_ids": [
+      "M01_FIRST_LIGHT",
+      "M02_OXYGEN_MYSTERY",
+      "M03_RED_DUST_RISING",
+      "M04_BROKEN_CIRCUIT",
+      "M05_THIRSTY_COLONY",
+      "M09_THE_DOMINO_EFFECT"
+    ],
+    "publication_date": null,
+    "retrieved_date": "2026-11-14",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "NASA_ISS_WATER_MILESTONE",
+    "title": "NASA Achieves Water Recovery Milestone on International Space Station",
+    "url": "https://www.nasa.gov/missions/station/iss-research/nasa-achieves-water-recovery-milestone-on-international-space-station/",
+    "provider": "NASA",
+    "source_type": "document",
+    "mission_ids": [
+      "M02_OXYGEN_MYSTERY",
+      "M05_THIRSTY_COLONY",
+      "M09_THE_DOMINO_EFFECT"
+    ],
+    "publication_date": "2023-06-20",
+    "retrieved_date": "2026-11-14",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "NASA_DONKI_CATALOG",
+    "title": "CCMC DONKI System",
+    "url": "https://ccmc.gsfc.nasa.gov/tools/DONKI/",
+    "provider": "NASA",
+    "source_type": "document",
+    "mission_ids": [
+      "M07_SOLAR_ALERT",
+      "E04_SHELTER_RUN"
+    ],
+    "publication_date": null,
+    "retrieved_date": "2026-11-14",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "NASA_RADLAB_SCOPE",
+    "title": "RadLab Data API",
+    "url": "https://visualization.osdr.nasa.gov/radlab/gui/data-api/",
+    "provider": "NASA",
+    "source_type": "document",
+    "mission_ids": [
+      "M07_SOLAR_ALERT",
+      "E04_SHELTER_RUN"
+    ],
+    "publication_date": null,
+    "retrieved_date": "2026-11-14",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "NASA_SRAG_SHIELDING",
+    "title": "How do we protect the astronauts from space radiation?",
+    "url": "https://srag.jsc.nasa.gov/SpaceRadiation/How/How.cfm",
+    "provider": "NASA",
+    "source_type": "document",
+    "mission_ids": [
+      "M07_SOLAR_ALERT",
+      "E04_SHELTER_RUN"
+    ],
+    "publication_date": null,
+    "retrieved_date": "2026-11-14",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "NASA_OSD104",
+    "title": "Rodent Research-1 (RR1) NASA Validation Flight: Mouse soleus muscle transcriptomic and epigenomic data",
+    "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-104",
+    "provider": "NASA",
+    "source_type": "document",
+    "mission_ids": [
+      "M10_SOL_30_SURVIVAL_TEST",
+      "ASTRONAUT_HEALTH"
+    ],
+    "publication_date": "2017-02-28",
+    "retrieved_date": "2026-11-14",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false,
+    "document_version": "9"
+  },
+  {
+    "id": "NASA_MARSTREK_ROVER_ROUTE",
+    "title": "Map a Mars Rover Driving Route",
+    "url": "https://www.jpl.nasa.gov/edu/resources/project/map-a-mars-rover-driving-route/",
+    "provider": "NASA/JPL",
+    "source_type": "document",
+    "mission_ids": [
+      "E01_FIRST_FOOTPRINTS",
+      "E02_THE_LOST_SENSOR",
+      "E03_ICE_CLUES",
+      "E05_RESCUE_THE_ROVER",
+      "R02_SECRETS_IN_THE_LAYERS"
+    ],
+    "publication_date": null,
+    "retrieved_date": "2026-11-14",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false
+  },
+  {
+    "id": "CSA_INTERPLANETARY_FARMING",
+    "title": "Interplanetary Farming",
+    "url": "https://www.asc-csa.gc.ca/eng/youth-educators/activities/fitness-and-nutrition/interplanetary-farming.asp",
+    "provider": "Canadian Space Agency",
+    "source_type": "document",
+    "mission_ids": [
+      "M06_GREENHOUSE_CHALLENGE",
+      "M10_SOL_30_SURVIVAL_TEST"
+    ],
+    "publication_date": null,
+    "retrieved_date": "2026-11-14",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false,
+    "source_modified_date": "2019-09-26"
+  },
+  {
+    "id": "CSA_PHYSICAL_ACTIVITY",
+    "title": "Physical activity in space",
+    "url": "https://www.asc-csa.gc.ca/eng/astronauts/living-in-space/physical-activity-in-space.asp",
+    "provider": "Canadian Space Agency",
+    "source_type": "document",
+    "mission_ids": [
+      "M10_SOL_30_SURVIVAL_TEST",
+      "ASTRONAUT_HEALTH"
+    ],
+    "publication_date": null,
+    "retrieved_date": "2026-11-14",
+    "ingestion": "rag_text",
+    "local_full_text_downloaded": false
+  }
+]

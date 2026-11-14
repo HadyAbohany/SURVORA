@@ -1,0 +1,48 @@
+[
+  {
+    "activityID": "2024-05-10T02:12:00-CME-001",
+    "catalog": "M2M_CATALOG",
+    "startTime": "2024-05-10T02:12Z",
+    "instruments": [
+      {
+        "displayName": "SOHO: LASCO/C2"
+      },
+      {
+        "displayName": "SOHO: LASCO/C3"
+      },
+      {
+        "displayName": "STEREO A: SECCHI/COR2"
+      }
+    ],
+    "sourceLocation": "N30E90",
+    "activeRegionNum": null,
+    "note": "Slow CME with a myriad of successive front features, culminating in a wide funnel-like flux rope. Source is likely a faint but significant opening of field lines behind the NE limb seen in EUVI A around 2024-05-10T00Z.",
+    "cmeAnalyses": [
+      {
+        "isMostAccurate": true,
+        "levelOfData": 0,
+        "time21_5": "2024-05-10T22:51Z",
+        "latitude": 44.0,
+        "longitude": -90.0,
+        "halfAngle": 41.0,
+        "speed": 232.0,
+        "type": "S",
+        "featureCode": "LE",
+        "imageType": "running difference",
+        "measurementTechnique": "SWPC_CAT",
+        "note": "Very speculative analysis based on a fit with two coronagraphs. The source could be much further behind the limb.",
+        "minorHalfWidth": null,
+        "speedMeasuredAtHeight": null,
+        "tilt": null,
+        "submissionTime": "2024-05-12T20:22Z",
+        "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/30789/-1",
+        "enlilList": []
+      }
+    ],
+    "linkedEvents": null,
+    "sentNotifications": null,
+    "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/CME/30788/-1",
+    "submissionTime": "2024-05-12T20:20Z",
+    "versionId": 1
+  }
+]
