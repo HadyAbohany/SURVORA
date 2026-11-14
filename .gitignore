@@ -51,3 +51,24 @@ models/
 .DS_Store
 .idea/
 .vscode/
+
+# Unity-generated files
+/unity/[Ll]ibrary/
+/unity/[Tt]emp/
+/unity/[Oo]bj/
+/unity/[Bb]uild/
+/unity/[Bb]uilds/
+/unity/[Ll]ogs/
+/unity/[Uu]ser[Ss]ettings/
+/unity/[Mm]emoryCaptures/
+/unity/[Rr]ecordings/
+/unity/.vs/
+/unity/*.sln
+/unity/*.csproj
+
+# Unity source and authoring assets may contain models and audio
+!/unity/Assets/**/
+!/unity/Assets/**/*.wav
+!/unity/Assets/**/*.onnx
+!/unity/Assets/**/*.sqlite3
+!/unity/Assets/**/*.db
